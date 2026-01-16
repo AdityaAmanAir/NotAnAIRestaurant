@@ -1,0 +1,150 @@
+body{
+    font-size: 16px;
+    color: #d3b21e;
+    background-color: #01180f;
+    font-family: 'Oxygen', sans-serif;
+}
+#header-nav {
+    background-color: rgba(51, 7, 2, 0.822);
+    border-radius: 0;
+    border: 0;
+}
+#logo-img {
+    background: url(../images/logo1.png) no-repeat center;
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0;
+    background-size: contain;
+}
+#certifi{
+    background: url(../images/rest1.png) no-repeat center;
+    width: 20px;
+    height: 20px;
+    margin: 0px 0px 0px 0;
+    background-size: contain;
+    position:  relative;
+    display: inline-block;
+}
+.navbar-brand h1{
+    font-family: 'Lora', serif;
+    color : #f1f1f1;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 0px 10px #53a5f1;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.nav-link{
+    color: #f1f1f1;
+    text-align: center;
+}
+.nav-link:hover{
+    background-color: #88ff0123;
+    color: #d3b21e;
+}
+.navbar-toggler{
+    color: #4e0606cc;
+    border-color: #d3b21e;
+}
+.navbar-toggler-icon{
+    background-color: #3b000011;
+}
+#home-tiles .col-md-4 {
+    padding: 10px;
+}
+#menu-tile, #specials-tile, #map-tile {
+    height: 200px;
+    background-color: #f8f9fa; 
+    border: 2px solid #dee2e6; 
+    display: flex;
+    align-items:last baseline;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover{
+    background-color: #d9dbd6f5;
+    color: #d3b21e;
+    box-shadow: #53a5f1 0px 0px 10px;
+
+}
+#menu-tile{
+    background: url(../images/menu.jpg) no-repeat center;
+    background-size: cover;
+}
+#specials-tile{
+    background: url(../images/specials.jpg) no-repeat center;
+    background-size: cover;
+}
+#menu-tile span, #specials-tile span, #map-tile span {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    opacity: .8;
+}
+
+#menu-tile:hover span, #specials-tile:hover span, #map-tile:hover span {
+    opacity: 1;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#hours, #address, #testimonials {
+    background-color: #080808;
+}
+#hours > span, #address > span, #testimonials > span {
+    font-size: 1.3em;
+}
+#address {
+    color: #d3b21e;
+    font-style: normal;
+}
+#testimonials {
+    font-style: italic;
+}
+#address p {
+    color: #d3b21e;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+#testimonials p:nth-child(2) {
+    margin-top: 25px;
+}
+#address p {
+    color:#557c3e;
+}
+
+@media (max-width: 769px ) {
+    .navbar-brand{
+        padding-top: 10px;
+        height: 80px;
+    }
+    #collapsable-nav a{
+        font-size: 1.2em;
+    }
+    #collapsable-nav a span{
+        font-size: 1em;
+        margin-right: 5px;
+    }
+    
+}
+@media (max-width: 576px) {
+    #logo-img {
+        width: 65px;
+        height: 100px;
+    }
+    .navbar-toggler-icon{
+        width: 20px;
+        height: 20px;
+    }
+}
