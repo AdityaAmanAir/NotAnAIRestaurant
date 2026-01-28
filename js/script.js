@@ -310,3 +310,94 @@ llkol2();
         }
     }
  })();
+
+
+console.log( document.getElementById("title"));
+function sayhelloFun(){
+    var name123 = document.getElementById("nameBox").value;
+    if (name123=="AI"|| name123=="ai" || name123=="Ai" || name123=="aI"){
+        document.getElementById("title").textContent="Aditya Aman is The Best SDE";
+    }else{
+    var message1 = "Hello "+ name123 + " : This is direct to .textContent";
+    var message2 = "<h3>Hello "+ name123 + " : This is direct to .innerHTML<\h3>";
+    console.log(message1) // ofCourse on console
+    document
+        .getElementById("contentArea")
+        .textContent = message1;
+    console.log(message2)    
+    document.getElementById("contentContainer").innerHTML = message2;   
+    }
+}
+
+function copybabe(){
+    var somebabe=document.getElementById("nameBox2").value;
+    document.getElementById("contentContainer2").textContent="Ohoo Babe!!! Learning JavaScript";
+
+}
+function alertboi(){
+    // this.textContent="You should not click on any Link or Button!";
+    document.getElementById("cont3").textContent="You are PlayFulllll!!!";
+}
+function alertboi2(){
+    document.getElementById("cont4").textContent="Are you PlayFullll???";
+}
+document.querySelector("#b3").onclick=alertboi;
+document.querySelector("#b4").addEventListener("click",alertboi2);
+document.addEventListener("DOMContentLoaded", function(event){
+document.getElementById("contlast").textContent="Html Loaded";
+console.log(event);
+}
+);
+document.querySelector("body").addEventListener("mousemove", function (event){
+    if(event.shiftKey === true){
+    console.log("x : "+ event.clientX);
+    console.log("y : "+ event.clientY);}
+});
+
+(function (global){
+var ajaxUtils={};
+ ///Returns an HTTP request object///
+function getRequestObject(){
+    if(window.XMLHttpRequest){
+        return (new XMLHttpRequest());
+    }else if(window.ActiveXObject){
+        return (new ActiveXObject("Microsoft.XMLHTTP"));
+    }else{
+        global.alert("Ajax is not supported");
+        return (null);
+    }
+ }
+ 
+ //Makes an Ajax GET request to 'requestUrl'
+ ajaxUtils.sendGetRequest = function(requestUrl, responseHandler){
+    var request = getRequestObject();
+    request.onreadystatechange= function(){
+        handleResponse(request, responseHandler);
+    };
+    request.open("GET", requestUrl, true);
+    request.send(null);
+ };
+//Only calls user provided 'responseHandler'
+//function if response is ready
+// and not an error
+function handleResponse(request,responseHandler){
+    if((request.readyState==4)&&(request.status == 200)){
+        responseHandler(request);
+    }
+}
+// Expose utility to the global object
+global.$ajaxUtils =ajaxUtils
+})(window);
+document.addEventListener("DOMContentLoaded", function(event){
+    document.querySelector("#b5").addEventListener("click", function(){
+        var self = this;
+        var name = "";
+
+        $ajaxUtils.sendGetRequest("/name.txt", function(request){
+            self.name = request.responseText;
+            console.log(self.name);
+            document.querySelector("#contentX").innerHTML="<h2>Hello "+self.name +"!<\h2>";
+
+        });
+    });
+});
